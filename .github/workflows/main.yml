@@ -11,9 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: lgmorand/github-action-pandoc@main
         with:
-          args: "--standalone --output=output/readme.html README.md"
+          args: "--standalone --output=readme.html README.md"
       - uses: actions/upload-artifact@v1
         with:
           name: "Artifact"
-          path: output
+          path: readme.htm
 
