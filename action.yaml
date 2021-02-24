@@ -1,0 +1,10 @@
+name: 'Pandoc Document Converter'
+description: 'GitHub Action to Convert Documents via Pandoc'
+author: 'Max Held'
+runs:
+  using: 'docker'
+  image: 'docker://pandoc/latex:2.6'
+  entrypoint: pandoc
+branding:
+  icon: 'book-open'  
+  color: 'green'
