@@ -1,10 +1,9 @@
 name: 'Pandoc Converter'
 description: 'GitHub Action to Convert Documents via Pandoc'
-author: 'Max Held'
+author: 'Louis-Guillaume MORAND'
 runs:
-  using: 'docker'
-  image: 'docker://pandoc/latex:2.6'
-  entrypoint: pandoc
+  using: "docker"
+  image: "Dockerfile"
 branding:
   icon: 'book-open'  
   color: 'green'
