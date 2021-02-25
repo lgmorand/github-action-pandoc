@@ -5,8 +5,10 @@ on:
       version:
         description: 'version of the container image'
         required: true 
-env:
-  IMAGE_NAME: lgmorand/github-action-pandoc
+      image:
+        description: 'name of the container image'
+        required: true 
+        default: "lgmorand/github-action-pandoc"
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -20,6 +22,7 @@ jobs:
         run: |
           # retrieve version from input
           VERSION="${{ github.event.inputs.version }}"
+          IMAGE_NAME="${{ github.event.inputs.image }}"
           TAG="$IMAGE_NAME:$VERSION"
           echo $TAG
           # Build and tag image
