@@ -20,9 +20,10 @@ jobs:
         run: |
           # retrieve version from input
           VERSION="${{ github.event.inputs.version }}"
-
+          TAG="$IMAGE_NAME:$VERSION"
+          echo $TAG
           # Build and tag image
           docker build . --file Dockerfile --tag $IMAGE_NAME --label "org.opencontainers.image.version=$VERSION"
-          docker tag $IMAGE_NAME $IMAGE_NAME:$VERSION
-          echo "tag: $IMAGE_NAME:$VERSION"
-          docker push $IMAGE_NAME
+          docker tag $IMAGE_NAME $TAG
+          
+          docker push $TAG
