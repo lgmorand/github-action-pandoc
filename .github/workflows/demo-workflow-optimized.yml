@@ -1,0 +1,18 @@
+name: Generate PDF
+on:
+  workflow_dispatch:
+
+
+jobs:
+
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: lgmorand/github-action-pandoc:1.0.1
+        with:
+          args: "--standalone --output=readme.html README.md"
+      - uses: actions/upload-artifact@v1
+        with:
+          name: "Artifact"
+          path: readme.html
