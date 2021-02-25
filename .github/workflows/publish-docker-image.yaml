@@ -1,10 +1,10 @@
 name: Publish Docker Image
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - v*
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'version of the container image'
+        required: true 
 env:
   IMAGE_NAME: lgmorand/github-action-pandoc
 jobs:
