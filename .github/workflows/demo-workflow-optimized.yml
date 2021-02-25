@@ -1,4 +1,4 @@
-name: Generate PDF
+name: Generate PDF optimized
 on:
   workflow_dispatch:
 
