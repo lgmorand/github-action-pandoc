@@ -8,8 +8,7 @@ RUN apk update\
     rsync\
     tar\
     libarchive-tools\
-    gmp\
-    curl
+    gmp
         
 ADD entrypoint.sh /entrypoint.sh
 RUN ["chmod", "+x", "/entrypoint.sh"]
