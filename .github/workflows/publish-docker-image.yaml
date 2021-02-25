@@ -19,11 +19,8 @@ jobs:
       - name: Push image to Docker Hub
         run: |
           # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "master" ] && VERSION=latest
+          VERSION="${{ github.event.inputs.version }}"
+
           # Build and tag image
           docker build . --file Dockerfile --tag $IMAGE_NAME --label "org.opencontainers.image.version=$VERSION"
           docker tag $IMAGE_NAME $IMAGE_NAME:$VERSION
