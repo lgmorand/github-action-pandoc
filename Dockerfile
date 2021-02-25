@@ -1,6 +1,6 @@
 FROM pandoc/latex:2.6
 
-RUN apk update && add --no-cache \
+RUN apk update && apk add --no-cache \
         texlive \
         texlive-xetex \
         textlive-full
