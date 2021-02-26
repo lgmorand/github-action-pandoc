@@ -1,4 +1,4 @@
-name: Generate PDF
+name: Generate PDF 2
 on:
   workflow_dispatch:
 
@@ -15,4 +15,4 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: "Artifact"
-          path: readme.html
+          path: readme.pdf
