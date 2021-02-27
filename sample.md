@@ -11,10 +11,6 @@ fontsize:
 - 12pt
 footer-content:
 - copyright Louis-Guillaume MORAND
-geometry:
-- margin=1in
-fontfamily:
-- charter
 header-includes:
 - \usepackage{indentfirst}
 - \setlength\parindent{24pt}
