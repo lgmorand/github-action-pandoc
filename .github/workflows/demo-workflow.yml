@@ -13,6 +13,6 @@ jobs:
           args: "--standalone --output=sample.pdf sample.md"
       - uses: actions/upload-artifact@v1
         with:
-          name: "Artifact"
+          name: "PDF"
           path: sample.pdf
 
