@@ -8,11 +8,11 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: docker://lgmorand/github-action-pandoc:1.0.1
         with:
           args: "--standalone --output=readme.html README.md"
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: "Artifact"
           path: readme.html
